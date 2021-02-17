@@ -1,16 +1,28 @@
 .navbar {
   display: flex;
-  gap: 1em;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11);
-  padding: 1em;
+  padding: 10px 20px;
 }
 
-.navbar a {
+.navbar ul {
+  display: flex;
+}
+
+.navbar li {
   text-decoration: none;
-  color: inherit;
+  margin-left: 16px;
 }
 
-.navbar a:hover {
+.navbar li:hover {
+  color: var(--primary-color);
+}
+
+.logo {
+  color: var(--secondary-color);
+}
+
+.logo:hover {
   color: var(--primary-color);
 }

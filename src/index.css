@@ -12,3 +12,12 @@ body {
   background-color: var(--body-background-color);
   color: var(--body-text-color);
 }
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
