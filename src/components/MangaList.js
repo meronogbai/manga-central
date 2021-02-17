@@ -6,7 +6,7 @@ const MangaList = () => {
   const manga = useSelector(state => state.manga);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchManga());
+    dispatch(fetchManga(1));
   }, []);
   return (
     <div>

@@ -9,6 +9,7 @@ const mangaReducer = (state = initialState, action) => {
     case 'BEGIN':
       return {
         ...state,
+        items: [],
         loading: true,
         error: null,
       };
