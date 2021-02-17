@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import fetchManga from '../actions/fetchManga';
 
 const MangaList = () => {
-  const manga = useSelector(state => state.manga.items);
+  const manga = useSelector(state => state.manga);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchManga());
@@ -11,7 +11,8 @@ const MangaList = () => {
   return (
     <div>
       <h1>Manga List</h1>
-      {JSON.stringify(manga)}
+      {manga.loading && 'Loading...'}
+      {JSON.stringify(manga.items)}
     </div>
   );
 };

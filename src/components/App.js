@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import MangaList from '../containers/MangaList';
+import MangaList from './MangaList';
 import Error from './Error';
 import Home from './Home';
 import Manga from './Manga';
