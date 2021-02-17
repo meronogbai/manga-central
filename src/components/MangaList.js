@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import fetchManga from '../actions/fetchManga';
@@ -24,7 +26,7 @@ const MangaList = () => {
       <h1>Manga List</h1>
       <button type="button" onClick={handlePreviousClick}>Previous</button>
       <button type="button" onClick={handleNextClick}>Next</button>
-      {manga.loading && 'Loading...'}
+      {manga.loading && <FontAwesomeIcon icon={faSpinner} spin />}
       {JSON.stringify(manga.items)}
     </div>
   );
