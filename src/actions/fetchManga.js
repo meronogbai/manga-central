@@ -9,7 +9,7 @@ const handleErrors = response => {
 
 const fetchManga = () => dispatch => {
   dispatch(fetchMangaBegin());
-  return fetch('https://api.jikan.moe/v3/search/manga/q=&order_by=score')
+  return fetch('https://api.jikan.moe/v3/search/manga?q=&order_by=score')
     .then(handleErrors)
     .then(response => response.json())
     .then(data => {
