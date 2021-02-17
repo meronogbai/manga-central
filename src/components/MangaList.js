@@ -3,11 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import fetchManga from '../actions/fetchManga';
 
 const MangaList = () => {
-  const [page, setPage] = useState(1);
   const manga = useSelector(state => state.manga);
   const dispatch = useDispatch();
+  const abortController = new AbortController();
+  const [page, setPage] = useState(1);
   useEffect(() => {
-    dispatch(fetchManga(page));
+    dispatch(fetchManga(page, abortController));
+    return () => {
+      abortController.abort();
+    };
   }, [page]);
   const handleNextClick = () => {
     setPage(page => page + 1);

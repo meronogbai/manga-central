@@ -7,16 +7,21 @@ const handleErrors = response => {
   return response;
 };
 
-const fetchManga = page => dispatch => {
+const fetchManga = (page, abortController) => dispatch => {
   dispatch(fetchMangaBegin());
-  return fetch(`https://api.jikan.moe/v3/search/manga?q=&order_by=score&page=${page}`)
+  return fetch(`https://api.jikan.moe/v3/search/manga?q=&order_by=score&page=${page}`,
+    { signal: abortController.signal })
     .then(handleErrors)
     .then(response => response.json())
     .then(data => {
       dispatch(fetchMangaSuccess(data.results));
       return data.results;
     })
-    .catch(error => dispatch(fetchMangaFailure(error)));
+    .catch(error => {
+      if (!abortController.signal.aborted) {
+        dispatch(fetchMangaFailure(error));
+      }
+    });
 };
 
 export default fetchManga;
