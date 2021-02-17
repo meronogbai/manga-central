@@ -1,1 +1,7 @@
 @import '../node_modules/modern-normalize/modern-normalize.css';
+
+:root {
+  --primary-color: #3f72af;
+  --secondary-color: #112d4e;
+  --tertiary-color: #dbe2ef;
+}
