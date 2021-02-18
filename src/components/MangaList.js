@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import fetchManga from '../actions/fetchManga';
 import PaginationButtons from './PaginationButtons';
 import styles from '../styles/MangaList.module.css';
-import Loading from './Loadinig';
+import Loading from './Loading';
 
 const MangaList = () => {
   const manga = useSelector(state => state.manga);
