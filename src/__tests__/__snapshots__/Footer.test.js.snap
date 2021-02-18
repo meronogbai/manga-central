@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<footer
+  className="footer fixedBottom"
+>
+  Made with
+   
+  <span
+    aria-label="heart"
+    role="img"
+  >
+    ❤️
+  </span>
+   
+  by Meron Ogbai
+</footer>
+`;

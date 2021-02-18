@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<main
+  className="home"
+>
+  <div>
+    <h1>
+      Manga Central
+    </h1>
+    <a
+      className="cta"
+      href="/manga"
+      onClick={[Function]}
+    >
+      Top Manga
+    </a>
+  </div>
+</main>
+`;
