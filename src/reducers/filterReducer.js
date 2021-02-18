@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
   current: 'All',
   possible: ['All', 'Finished', 'Publishing'],
 };
