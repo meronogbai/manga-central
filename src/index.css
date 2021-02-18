@@ -25,6 +25,7 @@ a {
 h1,
 h2 {
   color: var(--secondary-color);
+  margin: 0;
 }
 
 main {
