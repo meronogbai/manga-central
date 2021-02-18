@@ -11,7 +11,6 @@ const Footer = () => {
       <span role="img" aria-label="heart">❤️</span>
       {' '}
       by Meron Ogbai
-      {/* {JSON.stringify(location.pathname)} */}
     </footer>
   );
 };
