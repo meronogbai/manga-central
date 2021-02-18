@@ -1,0 +1,15 @@
+.home {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cta {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+}

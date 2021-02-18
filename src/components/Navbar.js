@@ -12,7 +12,7 @@ const Navbar = () => (
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/manga">Manga List</Link>
+          <Link to="/manga">Top Manga</Link>
         </li>
       </ul>
     </nav>
