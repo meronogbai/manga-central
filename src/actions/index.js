@@ -11,3 +11,8 @@ export const fetchMangaFailure = error => ({
   type: 'FAILURE',
   error,
 });
+
+export const changeFilter = filter => ({
+  type: 'CHANGE_FILTER',
+  filter,
+});

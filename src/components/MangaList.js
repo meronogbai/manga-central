@@ -5,6 +5,7 @@ import fetchManga from '../actions/fetchManga';
 import PaginationButtons from './PaginationButtons';
 import styles from '../styles/MangaList.module.css';
 import Loading from './Loading';
+import StatusFilter from './StatusFilter';
 
 const MangaList = () => {
   const manga = useSelector(state => state.manga);
@@ -26,6 +27,7 @@ const MangaList = () => {
   return (
     <main>
       <h1>Manga List</h1>
+      <StatusFilter />
       <PaginationButtons
         handleNextClick={handleNextClick}
         handlePreviousClick={handlePreviousClick}
