@@ -8,6 +8,10 @@
   --black: #111827;
 }
 
+* {
+  outline-color: var(--tertiary-color);
+}
+
 body {
   background-color: var(--body-background-color);
   color: var(--secondary-color);

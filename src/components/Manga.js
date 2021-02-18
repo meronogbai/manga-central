@@ -28,7 +28,17 @@ const Manga = () => {
           {manga.title}
         </h1>
 
-        <img src={manga.image_url} alt={manga.title} />
+        <div>
+          <img src={manga.image_url} alt={manga.title} />
+          <div>
+            <strong>Status: </strong>
+            {manga.status}
+          </div>
+          <div>
+            <strong>Author(s): </strong>
+            {manga.authors.map(author => author.name.replace(', ', ' ')).join(', ')}
+          </div>
+        </div>
 
         <article>
           <h2>Synopsis</h2>
@@ -47,10 +57,6 @@ const Manga = () => {
         <ul>
           {manga.genres.map(genre => <li key={genre.mal_id}>{genre.name}</li>)}
         </ul>
-        <div>
-          <strong>Status: </strong>
-          {manga.status}
-        </div>
       </main>
     );
   } else {
