@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { handleErrors } from '../actions/fetchManga';
 import Loading from './Loading';
+import styles from '../styles/Manga.module.css';
 
 const Manga = () => {
   const { id } = useParams();
@@ -27,36 +28,37 @@ const Manga = () => {
         <h1>
           {manga.title}
         </h1>
-
-        <div>
-          <img src={manga.image_url} alt={manga.title} />
+        <div className={styles.wrapper}>
+          <article className={styles.main}>
+            <img src={manga.image_url} alt={manga.title} />
+            <div>
+              <strong>Author(s): </strong>
+              {manga.authors.map(author => author.name.replace(', ', ' ')).join(', ')}
+            </div>
+            <div>
+              <strong>Status: </strong>
+              {manga.status}
+            </div>
+            <div>
+              <strong>Genres: </strong>
+              {manga.genres.map(genre => genre.name).join(', ')}
+            </div>
+          </article>
           <div>
-            <strong>Status: </strong>
-            {manga.status}
-          </div>
-          <div>
-            <strong>Author(s): </strong>
-            {manga.authors.map(author => author.name.replace(', ', ' ')).join(', ')}
+            <article>
+              <h2>Synopsis</h2>
+              <p>
+                {manga.synopsis}
+              </p>
+            </article>
+            <article>
+              <h2>Background</h2>
+              <p>
+                {manga.background}
+              </p>
+            </article>
           </div>
         </div>
-
-        <article>
-          <h2>Synopsis</h2>
-          <p>
-            {manga.synopsis}
-          </p>
-        </article>
-
-        <article>
-          <h2>Background</h2>
-          <p>
-            {manga.background}
-          </p>
-        </article>
-        <h3>Genres</h3>
-        <ul>
-          {manga.genres.map(genre => <li key={genre.mal_id}>{genre.name}</li>)}
-        </ul>
       </main>
     );
   } else {
