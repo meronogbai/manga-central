@@ -4,17 +4,19 @@ import { faBook } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => (
-  <nav className={styles.navbar}>
-    <Link to="/"><FontAwesomeIcon icon={faBook} size="2x" className={styles.logo} /></Link>
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/manga">Manga List</Link>
-      </li>
-    </ul>
-  </nav>
+  <header>
+    <nav className={styles.navbar}>
+      <Link to="/"><FontAwesomeIcon icon={faBook} size="2x" className={styles.logo} /></Link>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/manga">Manga List</Link>
+        </li>
+      </ul>
+    </nav>
+  </header>
 );
 
 export default Navbar;

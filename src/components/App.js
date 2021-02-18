@@ -6,7 +6,7 @@ import Manga from './Manga';
 import Navbar from './Navbar';
 
 const App = () => (
-  <main>
+  <>
     <BrowserRouter>
       <Navbar />
       <Switch>
@@ -16,7 +16,7 @@ const App = () => (
         <Route component={Error} />
       </Switch>
     </BrowserRouter>
-  </main>
+  </>
 );
 
 export default App;
