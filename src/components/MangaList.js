@@ -9,6 +9,7 @@ import StatusFilter from './StatusFilter';
 
 const MangaList = () => {
   const manga = useSelector(state => state.manga);
+  const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
   const abortController = new AbortController();
   const [page, setPage] = useState(1);
@@ -24,6 +25,15 @@ const MangaList = () => {
   const handlePreviousClick = () => {
     setPage(page => (page === 1 ? page : page - 1));
   };
+  const filterStatus = item => {
+    if (filter.current === 'Publishing') {
+      return item.publishing === true;
+    }
+    if (filter.current === 'Finished') {
+      return item.publishing === false;
+    }
+    return true;
+  };
   return (
     <main>
       <h1>Manga List</h1>
@@ -34,12 +44,13 @@ const MangaList = () => {
       />
       {manga.loading && <Loading />}
       <section className={styles.mangaList}>
-        {manga.items.map(eachManga => (
-          <Link to={`/manga/${eachManga.mal_id}`} key={eachManga.mal_id}>
-            <img src={eachManga.image_url} alt={eachManga.title} loading="lazy" />
-            <h2>{eachManga.title}</h2>
-          </Link>
-        ))}
+        {(manga.items.filter(item => filterStatus(item)))
+          .map(eachManga => (
+            <Link to={`/manga/${eachManga.mal_id}`} key={eachManga.mal_id}>
+              <img src={eachManga.image_url} alt={eachManga.title} loading="lazy" />
+              <h2>{eachManga.title}</h2>
+            </Link>
+          ))}
       </section>
       <PaginationButtons
         handleNextClick={handleNextClick}
