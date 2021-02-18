@@ -22,13 +22,22 @@ const MangaList = () => {
     setPage(page => (page === 1 ? page : page - 1));
   };
   return (
-    <div>
+    <main>
       <h1>Manga List</h1>
       <button type="button" onClick={handlePreviousClick}>Previous</button>
       <button type="button" onClick={handleNextClick}>Next</button>
-      {manga.loading && <FontAwesomeIcon icon={faSpinner} spin />}
-      {JSON.stringify(manga.items)}
-    </div>
+      {manga.loading && <div><FontAwesomeIcon icon={faSpinner} spin size="10x" /></div>}
+      <section>
+        {manga.items.map(eachManga => (
+          <article key={eachManga.mal_id}>
+            <h2>{eachManga.title}</h2>
+            <img src={eachManga.image_url} alt={eachManga.title} loading="lazy" />
+          </article>
+        ))}
+      </section>
+      <button type="button" onClick={handlePreviousClick}>Previous</button>
+      <button type="button" onClick={handleNextClick}>Next</button>
+    </main>
   );
 };
 
