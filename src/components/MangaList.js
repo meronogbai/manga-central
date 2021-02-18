@@ -36,8 +36,11 @@ const MangaList = () => {
   };
   return (
     <main>
-      <h1>Manga List</h1>
-      <StatusFilter />
+      <h1>
+        View
+        <StatusFilter />
+        Manga
+      </h1>
       <PaginationButtons
         handleNextClick={handleNextClick}
         handlePreviousClick={handlePreviousClick}

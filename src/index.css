@@ -4,7 +4,7 @@
   --primary-color: #3f72af;
   --secondary-color: #112d4e;
   --tertiary-color: #dbe2ef;
-  --body-background-color: #f9f7f7;
+  --white: #f9f7f7;
   --black: #111827;
 }
 
@@ -13,7 +13,7 @@
 }
 
 body {
-  background-color: var(--body-background-color);
+  background-color: var(--white);
   color: var(--secondary-color);
 }
 
@@ -31,6 +31,14 @@ h1,
 h2 {
   margin: 0;
   padding: 15px 0;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
 }
 
 main {
