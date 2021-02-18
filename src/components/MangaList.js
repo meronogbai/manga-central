@@ -1,11 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import fetchManga from '../actions/fetchManga';
 import PaginationButtons from './PaginationButtons';
 import styles from '../styles/MangaList.module.css';
+import Loading from './Loadinig';
 
 const MangaList = () => {
   const manga = useSelector(state => state.manga);
@@ -31,7 +30,7 @@ const MangaList = () => {
         handleNextClick={handleNextClick}
         handlePreviousClick={handlePreviousClick}
       />
-      {manga.loading && <div><FontAwesomeIcon icon={faSpinner} spin size="10x" /></div>}
+      {manga.loading && <Loading />}
       <section className={styles.mangaList}>
         {manga.items.map(eachManga => (
           <Link to={`/manga/${eachManga.mal_id}`} key={eachManga.mal_id}>
