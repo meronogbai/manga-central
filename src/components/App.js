@@ -4,6 +4,7 @@ import Error from './Error';
 import Home from './Home';
 import Manga from './Manga';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const App = () => (
   <>
@@ -15,6 +16,7 @@ const App = () => (
         <Route path="/manga/:id" component={Manga} />
         <Route component={Error} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   </>
 );

@@ -1,0 +1,13 @@
+.footer {
+  background-color: var(--secondary-color);
+  color: var(--body-background-color);
+  text-align: center;
+  padding: 15px 0;
+}
+
+.fixedBottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
