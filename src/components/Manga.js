@@ -1,29 +1,31 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { handleErrors } from '../actions/fetchManga';
+import Loading from './Loading';
 
 const Manga = () => {
   const { id } = useParams();
-  const [manga, setManga] = useState('Loading..');
-  const useFetch = id => {
-    useEffect(() => {
-      fetch(`https://api.jikan.moe/v3/manga/${id}`)
-        .then(res => res.json())
-        .then(data => setManga(JSON.stringify(data)));
-    }, []);
-  };
 
-  useFetch(id);
+  const [title, setTitle] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch(`https://api.jikan.moe/v3/manga/${id}`)
+      .then(handleErrors)
+      .then(response => response.json())
+      .then(data => {
+        setTitle(data.title);
+        setLoading(false);
+      });
+  }, []);
+
   return (
-    <article>
+    <main>
       <h1>
-        Manga
-        {' '}
-        {id}
+        {title}
       </h1>
-      <div>
-        {manga}
-      </div>
-    </article>
+      {loading && <Loading />}
+    </main>
   );
 };
 

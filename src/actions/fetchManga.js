@@ -1,6 +1,6 @@
 import { fetchMangaBegin, fetchMangaFailure, fetchMangaSuccess } from '.';
 
-const handleErrors = response => {
+export const handleErrors = response => {
   if (!response.ok) {
     throw new Error(response.statusText);
   }
