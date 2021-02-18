@@ -6,13 +6,7 @@ import Loading from './Loading';
 const Manga = () => {
   const { id } = useParams();
 
-  const [manga, setManga] = useState({
-    title: null,
-    image_url: null,
-    synopsis: null,
-    background: null,
-    genres: [],
-  });
+  const [manga, setManga] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -25,33 +19,47 @@ const Manga = () => {
       });
   }, []);
 
+  let content;
+
+  if (!loading) {
+    content = (
+      <main>
+        <h1>
+          {manga.title}
+        </h1>
+
+        <img src={manga.image_url} alt={manga.title} />
+
+        <article>
+          <h2>Synopsis</h2>
+          <p>
+            {manga.synopsis}
+          </p>
+        </article>
+
+        <article>
+          <h2>Background</h2>
+          <p>
+            {manga.background}
+          </p>
+        </article>
+        <h3>Genres</h3>
+        <ul>
+          {manga.genres.map(genre => <li key={genre.mal_id}>{genre.name}</li>)}
+        </ul>
+        <div>
+          <strong>Status: </strong>
+          {manga.status}
+        </div>
+      </main>
+    );
+  } else {
+    content = <Loading />;
+  }
   return (
-    <main>
-      {loading && <Loading />}
-      <h1>
-        {manga.title}
-      </h1>
-
-      <img src={manga.image_url} alt={manga.title} />
-
-      <article>
-        <h2>{loading || 'Synopsis'}</h2>
-        <p>
-          {manga.synopsis}
-        </p>
-      </article>
-
-      <article>
-        <h2>{loading || 'Background'}</h2>
-        <p>
-          {manga.background}
-        </p>
-      </article>
-      <h3>{loading || 'Genres'}</h3>
-      <ul>
-        {manga.genres.map(genre => <li key={genre.mal_id}>{genre.name}</li>)}
-      </ul>
-    </main>
+    <>
+      { content}
+    </>
   );
 };
 

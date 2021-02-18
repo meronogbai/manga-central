@@ -24,7 +24,7 @@
 }
 
 .mangaList h2 {
-  padding-bottom: 30px;
+  padding: 0 0 30px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
