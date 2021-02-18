@@ -3,6 +3,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import fetchManga from '../actions/fetchManga';
+import PaginationButtons from './PaginationButtons';
 
 const MangaList = () => {
   const manga = useSelector(state => state.manga);
@@ -24,8 +25,10 @@ const MangaList = () => {
   return (
     <main>
       <h1>Manga List</h1>
-      <button type="button" onClick={handlePreviousClick}>Previous</button>
-      <button type="button" onClick={handleNextClick}>Next</button>
+      <PaginationButtons
+        handleNextClick={handleNextClick}
+        handlePreviousClick={handlePreviousClick}
+      />
       {manga.loading && <div><FontAwesomeIcon icon={faSpinner} spin size="10x" /></div>}
       <section>
         {manga.items.map(eachManga => (
@@ -35,8 +38,10 @@ const MangaList = () => {
           </article>
         ))}
       </section>
-      <button type="button" onClick={handlePreviousClick}>Previous</button>
-      <button type="button" onClick={handleNextClick}>Next</button>
+      <PaginationButtons
+        handleNextClick={handleNextClick}
+        handlePreviousClick={handlePreviousClick}
+      />
     </main>
   );
 };
