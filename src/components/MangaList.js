@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import fetchManga from '../actions/fetchManga';
 import PaginationButtons from './PaginationButtons';
+import styles from '../styles/MangaList.module.css';
 
 const MangaList = () => {
   const manga = useSelector(state => state.manga);
@@ -30,11 +31,11 @@ const MangaList = () => {
         handlePreviousClick={handlePreviousClick}
       />
       {manga.loading && <div><FontAwesomeIcon icon={faSpinner} spin size="10x" /></div>}
-      <section>
+      <section className={styles.mangaList}>
         {manga.items.map(eachManga => (
           <article key={eachManga.mal_id}>
-            <h2>{eachManga.title}</h2>
             <img src={eachManga.image_url} alt={eachManga.title} loading="lazy" />
+            <h2>{eachManga.title}</h2>
           </article>
         ))}
       </section>
