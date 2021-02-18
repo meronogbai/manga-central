@@ -19,7 +19,7 @@ const mangaReducer = (state = initialState, action) => {
         loading: false,
         items: action.manga,
       };
-    case 'ERROR':
+    case 'FAILURE':
       return {
         ...state,
         loading: false,

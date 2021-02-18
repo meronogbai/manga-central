@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import fetchManga from '../actions/fetchManga';
 import PaginationButtons from './PaginationButtons';
 import styles from '../styles/MangaList.module.css';
@@ -8,6 +8,7 @@ import Loading from './Loading';
 import StatusFilter from './StatusFilter';
 
 const MangaList = () => {
+  const history = useHistory();
   const manga = useSelector(state => state.manga);
   const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
@@ -34,6 +35,9 @@ const MangaList = () => {
     }
     return true;
   };
+  if (manga.error) {
+    history.push('/error');
+  }
   return (
     <main>
       <h1>

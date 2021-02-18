@@ -2,7 +2,7 @@ import { fetchMangaBegin, fetchMangaFailure, fetchMangaSuccess } from '.';
 
 export const handleErrors = response => {
   if (!response.ok) {
-    throw new Error(response.statusText);
+    throw new Error();
   }
   return response;
 };

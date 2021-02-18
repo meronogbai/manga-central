@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { handleErrors } from '../actions/fetchManga';
 import Loading from './Loading';
 import styles from '../styles/Manga.module.css';
 
 const Manga = () => {
+  const history = useHistory();
   const { id } = useParams();
 
   const [manga, setManga] = useState();
@@ -17,7 +18,8 @@ const Manga = () => {
       .then(data => {
         setManga(data);
         setLoading(false);
-      });
+      })
+      .catch(() => history.push('/error'));
   }, []);
 
   let content;
