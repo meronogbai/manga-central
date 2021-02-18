@@ -5,12 +5,12 @@
   --secondary-color: #112d4e;
   --tertiary-color: #dbe2ef;
   --body-background-color: #f9f7f7;
-  --body-text-color: #111827;
+  --black: #111827;
 }
 
 body {
   background-color: var(--body-background-color);
-  color: var(--body-text-color);
+  color: var(--secondary-color);
 }
 
 ul {
@@ -24,7 +24,6 @@ a {
 
 h1,
 h2 {
-  color: var(--secondary-color);
   margin: 0;
 }
 
