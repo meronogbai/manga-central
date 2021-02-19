@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import fetchManga, { url } from '../actions/fetchManga';
 import PaginationButtons from './PaginationButtons';
 import styles from '../styles/MangaList.module.css';
@@ -9,13 +9,14 @@ import StatusFilter from './StatusFilter';
 
 const MangaList = () => {
   const history = useHistory();
+  const location = useLocation();
   const manga = useSelector(state => state.manga);
   const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
   const abortController = new AbortController();
   const [page, setPage] = useState(1);
   useEffect(() => {
-    dispatch(fetchManga(url, page, abortController));
+    dispatch(fetchManga(url, location.search.slice(3), page, abortController));
     return () => {
       abortController.abort();
     };

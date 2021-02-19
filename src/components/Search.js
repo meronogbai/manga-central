@@ -11,13 +11,13 @@ const Search = () => {
     e.preventDefault();
     history.push({
       pathname: '/manga',
-      search: manga.replace(' ', '%20'),
+      search: `?q=${manga.replace(' ', '%20')}`,
     });
   };
   return (
     <main>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={manga} onChange={handleChange} placeholder="Manga" />
+        <input type="text" value={manga} onChange={handleChange} placeholder="Manga" required pattern="\S.*" />
         <button type="submit">Search</button>
       </form>
     </main>

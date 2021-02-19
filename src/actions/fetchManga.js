@@ -9,9 +9,10 @@ export const handleErrors = response => {
   return response;
 };
 
-const fetchManga = (url, page, abortController) => dispatch => {
+const fetchManga = (url, search, page, abortController) => dispatch => {
   dispatch(fetchMangaBegin());
-  return fetch(`${url}?q=&order_by=score&page=${page}`,
+  const api = search === '' ? `${url}?q=&order_by=score&page=${page}` : `${url}?q=${search}&page=${page}`;
+  return fetch(api,
     { signal: abortController.signal })
     .then(handleErrors)
     .then(response => response.json())
