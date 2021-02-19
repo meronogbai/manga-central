@@ -9,7 +9,7 @@ const Navbar = () => (
       <Link to="/"><FontAwesomeIcon icon={faBook} size="2x" className={styles.logo} /></Link>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/search">Search</Link>
         </li>
         <li>
           <Link to="/manga">Top Manga</Link>

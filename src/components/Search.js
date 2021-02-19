@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import styles from '../styles/Search.module.css';
 
 const Search = () => {
   const [manga, setManga] = useState('');
@@ -15,7 +16,7 @@ const Search = () => {
     });
   };
   return (
-    <main>
+    <main className={styles.search}>
       <form onSubmit={handleSubmit}>
         <input type="text" value={manga} onChange={handleChange} placeholder="Manga" required pattern="\S.*" />
         <button type="submit">Search</button>
