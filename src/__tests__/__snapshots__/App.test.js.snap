@@ -65,7 +65,7 @@ Array [
     </div>
   </main>,
   <footer
-    className="footer fixedBottom"
+    className="footer"
   >
     Made with
      

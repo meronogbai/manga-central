@@ -4,12 +4,3 @@
   text-align: center;
   padding: 15px 0;
 }
-
-@media only screen and (min-width: 1024px) {
-  .fixedBottom {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-}
