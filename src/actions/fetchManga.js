@@ -1,5 +1,7 @@
 import { fetchMangaBegin, fetchMangaFailure, fetchMangaSuccess } from '.';
 
+export const url = 'https://api.jikan.moe/v3/search/manga';
+
 export const handleErrors = response => {
   if (!response.ok) {
     throw new Error();
@@ -7,9 +9,9 @@ export const handleErrors = response => {
   return response;
 };
 
-const fetchManga = (page, abortController) => dispatch => {
+const fetchManga = (url, page, abortController) => dispatch => {
   dispatch(fetchMangaBegin());
-  return fetch(`https://api.jikan.moe/v3/search/manga?q=&order_by=score&page=${page}`,
+  return fetch(`${url}?q=&order_by=score&page=${page}`,
     { signal: abortController.signal })
     .then(handleErrors)
     .then(response => response.json())
