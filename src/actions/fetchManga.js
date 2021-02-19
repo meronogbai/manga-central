@@ -11,7 +11,12 @@ export const handleErrors = response => {
 
 const fetchManga = (url, search, page, abortController) => dispatch => {
   dispatch(fetchMangaBegin());
-  const api = search === '' ? `${url}?q=&order_by=score&page=${page}` : `${url}?q=${search}&page=${page}`;
+  let api;
+  if (search === '') {
+    api = `${url}?q=&order_by=score&page=${page}`;
+  } else {
+    api = `${url}?q=${search}&page=${page}&genre=12&genre_exclude=0`;
+  }
   return fetch(api,
     { signal: abortController.signal })
     .then(handleErrors)

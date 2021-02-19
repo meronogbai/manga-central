@@ -18,7 +18,7 @@ const Search = () => {
   return (
     <main className={styles.search}>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={manga} onChange={handleChange} placeholder="Manga" required pattern="\S.*" />
+        <input type="text" value={manga} onChange={handleChange} placeholder="Manga" required pattern="\S.*" minLength="3" />
         <button type="submit">Search</button>
       </form>
     </main>

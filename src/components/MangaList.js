@@ -20,7 +20,7 @@ const MangaList = () => {
     return () => {
       abortController.abort();
     };
-  }, [page]);
+  }, [page, location.search]);
   const handleNextClick = () => {
     setPage(page => page + 1);
   };
