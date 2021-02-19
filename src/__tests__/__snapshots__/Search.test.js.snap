@@ -8,6 +8,7 @@ exports[`renders correctly 1`] = `
     onSubmit={[Function]}
   >
     <input
+      minLength="3"
       onChange={[Function]}
       pattern="\\\\S.*"
       placeholder="Manga"
