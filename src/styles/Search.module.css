@@ -21,4 +21,5 @@
   background-color: var(--primary-color);
   border-radius: 5px;
   color: var(--white);
+  cursor: pointer;
 }
