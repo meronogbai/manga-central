@@ -13,7 +13,7 @@ This app lets you view top manga sorted by their scores on [MyAnimeList](https:/
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://manga-central.netlify.app/)
 
 ## Getting Started
 
