@@ -26,7 +26,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
-Clone this repo.
+Clone this repo by executing `
+git clone git@github.com:meronokbay/manga-central.git
+` in your terminal.
 
 ### Install
 Execute `npm install` in the root of the cloned repo to install the necessarry dependencies.
