@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import fetchManga, { url } from '../actions/fetchManga';
-import PaginationButtons from './PaginationButtons';
+import PaginationButtons from '../components/PaginationButtons';
 import styles from '../styles/MangaList.module.css';
-import Loading from './Loading';
-import StatusFilter from './StatusFilter';
+import Loading from '../components/Loading';
+import StatusFilter from '../components/StatusFilter';
 
 const MangaList = () => {
   const history = useHistory();
