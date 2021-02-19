@@ -31,10 +31,10 @@ Array [
       <ul>
         <li>
           <a
-            href="/"
+            href="/search"
             onClick={[Function]}
           >
-            Home
+            Search
           </a>
         </li>
         <li>
