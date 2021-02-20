@@ -1,0 +1,9 @@
+.filter {
+  border-color: var(--secondary-color);
+  border-radius: 5px;
+  background-color: var(--white);
+}
+
+.filter:hover {
+  border-color: var(--tertiary-color);
+}

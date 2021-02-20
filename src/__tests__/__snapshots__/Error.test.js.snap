@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<main
+  className="error"
+>
+  <div>
+    <h1>
+      Oops!
+    </h1>
+    <p>
+      Seems like you've encoutered an error.
+    </p>
+    <img
+      alt="Error Meme"
+      src="https://i.kym-cdn.com/photos/images/original/001/401/347/312.jpg"
+    />
+  </div>
+</main>
+`;

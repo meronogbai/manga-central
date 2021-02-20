@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--white);
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar li {
+  text-decoration: none;
+  margin-left: 16px;
+}
+
+.navbar li:hover {
+  color: var(--primary-color);
+}
+
+.logo {
+  color: var(--primary-color);
+}
+
+.logo:hover {
+  color: var(--secondary-color);
+}

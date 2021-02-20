@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  gap: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main {
+    width: 250px;
+  }
+
+  .main img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .main {
+    width: 100%;
+  }
+}

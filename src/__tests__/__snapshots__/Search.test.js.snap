@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<main
+  className="search"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      minLength="3"
+      onChange={[Function]}
+      pattern="\\\\S.*"
+      placeholder="Manga"
+      required={true}
+      type="text"
+      value=""
+    />
+    <button
+      type="submit"
+    >
+      Search
+    </button>
+  </form>
+</main>
+`;
