@@ -1,0 +1,23 @@
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px 0;
+}
+
+.buttons > * {
+  color: white;
+  border: none;
+  padding: 10px 0;
+  flex-basis: 90px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.previousButton {
+  background-color: var(--secondary-color);
+}
+
+.nextButton {
+  background-color: var(--primary-color);
+}
