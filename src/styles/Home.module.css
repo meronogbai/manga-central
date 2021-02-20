@@ -5,10 +5,19 @@
   text-align: center;
 }
 
+.home h1 {
+  font-size: 42px;
+}
+
 .cta {
   background-color: var(--primary-color);
   color: var(--white);
-  padding: 10px;
+  padding: 16px;
   display: inline-block;
   border-radius: 5px;
+  margin: 16px;
+}
+
+.cta:hover {
+  box-shadow: 0 0 5px 4px rgba(0, 0, 0, 0.1);
 }
