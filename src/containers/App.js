@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import MangaList from '../containers/MangaList';
-import Error from './Error';
-import Home from './Home';
-import Manga from './Manga';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import Search from './Search';
+import MangaList from './MangaList';
+import Error from '../components/Error';
+import Home from '../components/Home';
+import Manga from '../components/Manga';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import Search from '../components/Search';
 
 const App = () => (
   <>
