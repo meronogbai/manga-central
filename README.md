@@ -2,7 +2,7 @@
 
 > Manga Central is a web  app that lets you view information about Asian comics (manga).
 
-![screenshot](./public/app_screenshot.png)
+![screenshot](./public/app_screenshot.jpg)
 
 This app lets you view top manga sorted by their scores on [MyAnimeList](https://myanimelist.net/). You can also search for particluar manga via a search box.
 
