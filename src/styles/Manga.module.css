@@ -1,8 +1,15 @@
 .wrapper {
   display: flex;
   gap: 30px;
+  padding-bottom: 10px;
 }
 
+.main img {
+  width: 200px;
+  height: auto;
+}
+
+.wrapper 
 @media only screen and (max-width: 768px) {
   .wrapper {
     flex-direction: column;

@@ -32,7 +32,7 @@ const Manga = () => {
         </h1>
         <div className={styles.wrapper}>
           <article className={styles.main}>
-            <img src={manga.image_url} alt={manga.title} />
+            <img src={manga.image_url} alt={manga.title} width="100px" height="150px" />
             <div>
               <strong>Author(s): </strong>
               {manga.authors.map(author => author.name.replace(', ', ' ')).join(', ')}
