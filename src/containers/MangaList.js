@@ -55,7 +55,7 @@ const MangaList = () => {
         {(manga.items.filter(item => filterStatus(item)))
           .map(eachManga => (
             <Link to={`/manga/${eachManga.mal_id}`} key={eachManga.mal_id}>
-              <img src={eachManga.image_url} alt={eachManga.title} loading="lazy" />
+              <img src={eachManga.image_url} alt={eachManga.title} loading="lazy" width="100px" height="150px" />
               <h2>{eachManga.title}</h2>
             </Link>
           ))}
